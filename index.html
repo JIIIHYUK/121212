@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>열심히 쓰는 중</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      padding: 18px;
+      background: #080808;
+      color: #ffffff;
+      font-family: Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    }
+
+    #output {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      font-size: clamp(18px, 3vw, 34px);
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    noscript {
+      display: block;
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <noscript>
+열심히 쓰는 중
+열심히 쓰는 중
+열심히 쓰는 중
+열심히 쓰는 중
+열심히 쓰는 중
+열심히 쓰는 중
+열심히 쓰는 중
+열심히 쓰는 중
+열심히 쓰는 중
+열심히 쓰는 중
+  </noscript>
+
+  <main id="output" aria-live="polite">열심히 쓰는 중</main>
+
+  <script>
+    var output = document.getElementById("output");
+    var text = "열심히 쓰는 중\n";
+    var chunk = "";
+
+    for (var i = 0; i < 120; i += 1) {
+      chunk += text;
+    }
+
+    output.textContent = chunk;
+
+    setInterval(function () {
+      output.textContent += chunk;
+      window.scrollTo(0, document.documentElement.scrollHeight);
+    }, 250);
+  </script>
+</body>
+</html>
